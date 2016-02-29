@@ -1,0 +1,30 @@
+<%= javascript_include_tag 'custom', 'data-turbolinks-track' => true %>
+
+<%= form_for @income, url: {action: "create"} do |f| %>
+<h1><b> Add Income</b></h1><h2> Please Add Your Income </h2>
+<table>
+  <tr>
+  <td>  <span class="label label-default">Income Category</span></td>
+  
+  <td>
+    <%= f.collection_select( :income_category_id, IncomeCategory.all, :id,:income_source,:include_blank => "Please select") %>
+  </td>
+   <td><a href="http://localhost:3000/income_categories/new" class="btn btn-primary btn-sm" role="button">Add Income category</a></td>
+  </tr>
+
+  <tr>
+   <td> <span class="label label-default">Amount</span></td>
+   <td> <%= f.text_field :amount %></td>
+  </tr>
+
+  <tr>
+    <td><span class="label label-default">Date</span></td>
+    <td><%= f.text_field :date, class: "datepicker" %></td>
+   
+  </tr>
+  
+  <tr>
+   <td> <%= f.submit class: "btn btn-success" %></td>
+  </tr>
+  </table>
+<% end %>

@@ -1,0 +1,37 @@
+<h1>Expense Categories</h1>
+ 
+<%= form_for :expense_category, url: expense_category_path(@expense_category),  method: :patch do |f| %>
+ 
+  <% if @expense_category.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@expense_categories.errors.count, "error") %> prohibited
+        this expense_categories from being saved:
+      </h2>
+      <ul>
+        <% @expense_categories.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+ <table>
+  <tr>
+  <td>  <%= f.label :Expense_Source %></td>
+  <td>  <%= f.text_field :expense_source %></td>
+  </tr>
+
+  <tr>
+   <td> <%= f.label :Description %></td>
+   <td> <%= f.text_area :desc %></td>
+  </tr>
+  <tr></tr>
+  <tr>
+   <td> <%= f.submit class: "btn btn-success" %></td>
+  </tr>
+  </table>
+ 
+<% end %>
+ 
+<%= link_to 'Back', expense_categories_path %>

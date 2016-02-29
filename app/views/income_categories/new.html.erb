@@ -1,0 +1,28 @@
+<%= form_for @income_category, url: {action: "create"} do |f| %>
+<div class="page-header">
+  <h1>Income Category <small>Add Income Category</small></h1>
+</div>
+<table>
+  <tr>
+  <td> <span class="label label-default">Income Source</span></td>
+  <td>  <%= f.text_field :income_source %></td>
+  <td><a href="http://localhost:3000/income_categories" class="btn btn-primary btn-sm" role="button">Edit Income category</a></td>
+  </tr>
+
+  <tr>
+  <td> <span class="label label-default">Description</span></td>
+   <td> <%= f.text_area :desc %></td>
+   <td> </td>
+  </tr>
+  <tr></tr>
+  <tr>
+</td>
+   <td><c> <%= f.submit class: "btn btn-success" %></c></td>
+  </tr>
+  <tr>
+   
+  </tr>
+  </table>
+<% end %>
+
+ 

@@ -1,0 +1,23 @@
+ <h1> Manage Expense Category </h1>
+<td><a href="http://localhost:3000/expense_categories/new" class="btn btn-primary btn-sm" role="button">Add Expense Category</a></td><table class="table table-striped">
+  <tr>
+    <th>Expense Source</th>
+    <th>Description</th>
+    <th>Edit</th>
+    <th>Delete</th>
+    <th colspan="2"></th>
+  </tr>
+ 
+  <% @expense_categories.each do |expense_category| %>
+    <tr>
+      <td><%= expense_category.expense_source %></td>
+      <td><%= expense_category.desc %></td>
+      
+      <td><%= link_to 'Edit', edit_expense_category_path(expense_category) %></td>
+      <td><%= link_to 'Delete', expense_category_path(expense_category),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+
+    </tr>
+  <% end %>
+</table>

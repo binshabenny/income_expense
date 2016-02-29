@@ -1,0 +1,27 @@
+<%= javascript_include_tag 'custom', 'data-turbolinks-track' => true %>
+<%= form_for @expense, url: {action: "create"} do |f| %>
+<h1><b> Add Expense</b></h1><h2> Please Add Your Expense </h2>
+<table>
+  <tr>
+    <td> <span class="label label-default">Expense_Category</span></td>
+  
+  <td>
+    <%= f.collection_select( :expense_category_id, ExpenseCategory.all, :id,:expense_source,:include_blank => "Please select") %>
+  </td>
+  <td><a href="http://localhost:3000/expense_categories/new" class="btn btn-primary btn-sm" role="button">Add Expense Category</a></td>
+  <tr>
+   <td> <span class="label label-default">Amount</span></td>
+   <td> <%= f.text_field :amount %></td>
+  </tr>
+
+  <tr>
+
+   <td> <span class="label label-default">Date</span></td>
+    <td><%= f.text_field :date, class: "datepicker" %></td>
+  </tr>
+  
+  <tr>
+   <td> <%= f.submit class: "btn btn-success" %></td>
+  </tr>
+  </table>
+<% end %>

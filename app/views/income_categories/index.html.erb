@@ -1,0 +1,23 @@
+ <h1> Manage Income Category </h1>
+ <td><a href="http://localhost:3000/income_categories/new" class="btn btn-primary btn-sm" role="button">Add Income category</a></td>
+<table class="table table-striped">  <tr>
+    <th>Income Source</th>
+    <th>Description</th>
+    <th>Edit</th>
+      <th>Delete</th>
+    <th colspan="2"></th>
+  </tr>
+ 
+  <% @income_categories.each do |income_category| %>
+    <tr>
+      <td><%= income_category.income_source %></td>
+      <td><%= income_category.desc %></td>
+      
+      <td><%= link_to 'Edit', edit_income_category_path(income_category) %></td>
+      <td><%= link_to 'Delete', income_category_path(income_category),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+
+    </tr>
+  <% end %>
+</table>

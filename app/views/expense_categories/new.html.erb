@@ -1,0 +1,26 @@
+<%= form_for @expense_category, url: {action: "create"} do |f| %>
+<h1><center></center>Expense Category</center></h1>
+<table>
+  <tr>
+  <td> <span class="label label-default">Expense Source</span></td>
+  <td>  <%= f.text_field :expense_source %></td>
+  <td><a href="http://localhost:3000/expense_categories" class="btn btn-primary btn-sm" role="button">Edit Expense Category</a></td>
+  </tr>
+
+  <tr>
+   <td> <span class="label label-default">Description</span></td>
+   <td> <%= f.text_area :desc %></td>
+  </tr>
+  <tr></tr>
+  <tr>
+   <td> <%= f.submit class: "btn btn-success" %></td>
+  </tr>
+  <tr>
+  </tr>
+  </table>
+  <% end %>
+
+
+ 
+
+ 

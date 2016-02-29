@@ -1,0 +1,17 @@
+<table>
+  <tr>
+    <th>Date</th>
+    <th>Amount</th>
+    <th colspan="3"></th>
+  </tr>
+ 
+  <% @expenses.each do |exp| %>
+    <tr>
+      <td><%= exp.date %></td>
+     
+      <td><%= exp.amount %></td>
+
+      <td><%= exp.expense_category.expense_source%><td/>
+    </tr>
+  <% end %>
+</table>

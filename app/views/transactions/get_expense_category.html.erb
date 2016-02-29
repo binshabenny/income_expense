@@ -1,0 +1,8 @@
+<%= javascript_include_tag 'custom', 'data-turbolinks-track' => true %>
+
+<table>
+	<tr>
+		<td>select expense category</td>
+		<td><%= collection_select( :expense_category_id, ExpenseCategory.all, :id,:expense_source,:include_blank => "Please select") %></td>
+	</tr>
+</table>

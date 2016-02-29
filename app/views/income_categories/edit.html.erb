@@ -1,0 +1,37 @@
+<h1>Income Categories</h1>
+ 
+<%= form_for :income_category, url: income_category_path(@income_category),  method: :patch do |f| %>
+ 
+  <% if @income_category.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@income_categories.errors.count, "error") %> prohibited
+        this income_categories from being saved:
+      </h2>
+      <ul>
+        <% @income_categories.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+ <table>
+  <tr>
+  <td>  <%= f.label :Income_Source %></td>
+  <td>  <%= f.text_field :income_source %></td>
+  </tr>
+
+  <tr>
+   <td> <%= f.label :Description %></td>
+   <td> <%= f.text_area :desc %></td>
+  </tr>
+  <tr></tr>
+  <tr>
+   <td> <%= f.submit %></td>
+  </tr>
+  </table>
+ 
+<% end %>
+ 
+<%= link_to 'Back', income_categories_path %>

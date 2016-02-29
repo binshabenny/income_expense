@@ -1,0 +1,46 @@
+
+<%= form_for :user do |f| %>
+
+ <div class="jumbotron">
+  <h1><b>Welcome To Income Expense Manager</b></h1>
+  <p><i>Income Expense Manager  is a free  expense manager software for your computer. With the help of this freeware you can control and manage your budget, income and expenses</i></p
+</div>
+<h1> </h1>
+</br>
+<table>
+  <tr><td>
+<div class="row">
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <div class="caption">
+        <h3>ADD INCOME</h3>
+        <p>Add income details here</p>
+        <p><a href="http://localhost:3000/income/new" class="btn btn-primary" role="button">Add Income</a> <a href="http://localhost:3000/income_categories/new" class="btn btn-default" role="button">Add Income Category</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+</td>
+<td></td>
+<td></td>
+<td><div class="row">
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+   <div class="caption">
+        <h3>ADD EXPENSE</h3>
+        <p>Add expense details here.</p>
+        <p><a href="http://localhost:3000/expenses/new" class="btn btn-primary" role="button">Add Expense</a> <a href="http://localhost:3000/expense_categories/new" class="btn btn-default" role="button">Add Expense Category</a></p>
+      </div>
+    </div>
+  </div>
+</div></td></tr>
+</table>
+<div class="list-group">
+  <a href="#" class="list-group-item active">
+  </a>
+  <a href="http://localhost:3000/transactions/id/get_date" class="list-group-item">Generate Bank Statement</a>
+  <a href="http://localhost:3000/expenses/id/get_expense_category" class="list-group-item">Generate Expense Report</a>
+  <a href="http://localhost:3000/users" class="list-group-item">Manage Categories</a>
+</div>
+
+<% end %>

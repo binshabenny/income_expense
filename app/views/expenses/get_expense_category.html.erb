@@ -1,0 +1,23 @@
+<%= javascript_include_tag 'custom', 'data-turbolinks-track' => true %>
+<table>
+	  <%= form_tag(expense_report_expense_path, :method => 'get')  do  %>
+	<tr>
+	  <td>Select Expense Category</td>
+	  <!-- <td></td> -->
+	  
+	   <td><%= collection_select(:expense, :expense_category_id, ExpenseCategory.all, :id,:expense_source,:include_blank => "Please select") %></td>
+	</tr>
+	
+	<td>start date</td>
+        <td><%= text_field_tag 'start_date', nil, class: 'datepicker'%></td>
+		<!-- <td><input type="text"  name="text1"  class="datepicker" /></td> -->
+	    <td>end date</td>
+		 <!-- <td><input type="text"  name="text2"  class="datepicker" /></td> -->
+		<td><%= text_field_tag 'end_date', nil, class: 'datepicker'%></td> 
+	</tr>
+	<tr>
+	<td><%= submit_tag  "Generete Report"%></td>	
+    </tr>
+<% end %>
+</table>
+

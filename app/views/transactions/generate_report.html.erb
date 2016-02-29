@@ -1,0 +1,28 @@
+<!-- <h1>Transaction Report</h1>
+<table>
+	<tr>
+		<td> Your Start date is <%= @start_date %></td>
+		</tr>
+		<tr>
+			<td>Your end date is <%= @end_date %></td>
+		</tr>
+
+
+	</table>
+ -->
+<table>
+  <tr>
+    <th>Date</th>
+    <th>Type</th>
+    <th>Amount</th>
+    <th colspan="3"></th>
+  </tr>
+ 
+  <% @transactions.each do |transaction| %>
+    <tr>
+      <td><%= transaction.date %></td>
+      <td><%= transaction.trans_type %></td>
+      <td><%= transaction.trans.amount %></td>
+    </tr>
+  <% end %>
+</table>
